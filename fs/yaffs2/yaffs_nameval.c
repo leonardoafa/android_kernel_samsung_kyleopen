@@ -146,6 +146,10 @@ int nval_get(const char *xb, int xb_size, const YCHAR * name, char *buf,
 		/*Advance over NUL */
 		pos++;
 		size--;
+		
+		if (!bsize)
+			return size;
+
 
 		if (size <= bsize) {
 			memcpy(buf, xb + pos, size);
