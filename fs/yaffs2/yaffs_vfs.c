@@ -400,7 +400,7 @@ static int yaffs_symlink(struct inode *dir, struct dentry *dentry,
 		struct inode *inode;
 
 		inode = yaffs_get_inode(dir->i_sb, obj->yst_mode, 0, obj);
-		yaffs_init_security(dir, dentry, inode)
+		yaffs_init_security(dir, dentry, inode);
 		d_instantiate(dentry, inode);
 		update_dir_time(dir);
 		yaffs_trace(YAFFS_TRACE_OS, "symlink created OK");
